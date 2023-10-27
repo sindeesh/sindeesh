@@ -5,3 +5,21 @@ for link in links:
         server1_apps.append(link.split(':')[0])
 
 print(server1_apps)
+#based on apps
+links = ['app1:server1', 'app1:server2', 'app2:server3', 'app3:server2', 'app4:server2']
+app1_servers = []
+for link in links:
+    if link.startswith('app1:'):
+        app1_servers.append(link.split(':')[1])
+
+print(app1_servers)
+#based on dictionary
+links = ['app1:server1', 'app1:server2', 'app2:server3', 'app3:server2', 'app4:server2']
+groups = {}
+for link in links:
+    app, server = link.split(':')
+    if app not in groups:
+        groups[app] = []
+    groups[app].append(server)
+
+print(groups)
