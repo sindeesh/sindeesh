@@ -1,0 +1,7 @@
+links = ['app1:server1', 'app1:server2', 'app2:server3', 'app3:server2', 'app4:server2']
+server1_apps = []
+for link in links:
+    if link.endswith(':server1'):
+        server1_apps.append(link.split(':')[0])
+
+print(server1_apps)
